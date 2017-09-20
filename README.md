@@ -7,7 +7,7 @@ ____________________________________________________
 
 ##### Activity LifeCycle
 
-![Activity LifeCycle]()
+![Activity LifeCycle](https://github.com/Hooooong/DAY13_Activity_etc/blob/master/image/Activity%20LifeCycle.jpg)
 
 - Activity 의 LifeCycle
 
@@ -24,12 +24,12 @@ ____________________________________________________
 
 - Activity 변화
 
-    ![B Activity 가 화면에 올라오면]()
+    ![B Activity 가 화면에 올라오면](https://github.com/Hooooong/DAY13_Activity_etc/blob/master/image/Activity1.PNG)
 
     - B Activity 가 A Activity 를 가리기 시작하면 A Activity는 onPause()이 된다.
     - 완전히 가리기 전에 B Activity 가 종료되면 A Activity는 onPause() -> onReasum() 이 되고 다시 RUNNING 상태로 돌아간다.
 
-    ![B Activity 가 화면에 가리게 되면]()
+    ![B Activity 가 화면에 가리게 되면](https://github.com/Hooooong/DAY13_Activity_etc/blob/master/image/Activity2.PNG)
 
     - B Activity 가 A Activity 를 완전히 가리면 A Activity 는 onPause()->onStop() 이 된다.
     - B Activity 가 종료되면 A Activity 는 onStop() -> onRestart() -> onStart() -> onResume() 이 되고 다시 RUNNING 상태로 돌아간다.
@@ -51,11 +51,11 @@ ____________________________________________________
     startActivityForResult(intent, 요청식별코드);
     ```
 
-    - 요청식별코드(requestCode)를 통해 실행시킨 intent의 결과를 식별할 수 있다.
+    - 요청식별코드(`requestCode`)를 통해 실행시킨 intent의 결과를 식별할 수 있다.
 
     - startActivityForResult를 실행시킨 Activity에서 onActivityResult 를 재정의해야 한다.
 
-    - 실행시킨 intent 에 대한 요청결과코드(resultCode)와 data를 받아 다양한 결과 처리를 할 수 있다.
+    - 실행시킨 intent 에 대한 요청결과코드(`resultCode`)와 `data`를 받아 다양한 결과 처리를 할 수 있다.
 
     ```java
     /**
@@ -104,8 +104,8 @@ ____________________________________________________
   > 주로 Activity 의 테마 또는 View 들의 모양을 정의할 떄 사용된다.
 
   - style 은 상속을 받을 수 있으며 각종 속성에 대한 정의를 내려 값을 설정한다.
-  - <<style name="스타일 이름" parent="상속받을 상위 스타일">><</style>> : 스타일 명과 상위 스타일을 설정할 수 있다.
-  - <<item name="style을 고유하게 식별하는 name 사용">>설정값<</item>> : 요소들을 정의할 수 있다.
+  - `<style name="스타일 이름" parent="상속받을 상위 스타일"></style>`: 스타일 명과 상위 스타일을 설정할 수 있다.
+  - `<item name="style을 고유하게 식별하는 name 사용">설정값</item>` : 요소들을 정의할 수 있다.
 
   - 기본 작성 방법
 
@@ -126,7 +126,7 @@ ____________________________________________________
 
   - 상태표시줄에 대한 속성
 
-  ![상태표시줄]()
+  ![상태표시줄](https://github.com/Hooooong/DAY13_Activity_etc/blob/master/image/%EC%83%81%ED%83%9C%ED%91%9C%EC%8B%9C%EC%A4%84.png)
 
   - material Theme 의 상태표시줄 명이다.
   - item name 에 이름을 설정하여 Theme 의 속성을 변경한다.
