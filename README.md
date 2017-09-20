@@ -9,7 +9,7 @@ ____________________________________________________
 
 ![Activity LifeCycle](https://github.com/Hooooong/DAY13_Activity_etc/blob/master/image/Activity%20LifeCycle.jpg)
 
-- Activity 의 LifeCycle 
+- Activity 의 LifeCycle
 
 
  메소드 | 설명
@@ -34,9 +34,12 @@ ____________________________________________________
     - B Activity 가 A Activity 를 완전히 가리면 A Activity 는 onPause()->onStop() 이 된다.
     - B Activity 가 종료되면 A Activity 는 onStop() -> onRestart() -> onStart() -> onResume() 이 되고 다시 RUNNING 상태로 돌아간다.
 
+
+- 참조 : [Activity LifeCycle](https://developer.android.com/guide/components/activities/activity-lifecycle.html)
+
 ##### Activity Result
 
-- startActivityForResult
+- startActivityForResult ,onActivityResult ,
 
     > Android startActivity와는 다르게 실행시킨 Activity 의 결과를 받을 수 있다.<br>
     > 결과 값을 통해 Activity 의 초기화 작업이나 다양한 작업을 할 수 있는 이점이 있다.
@@ -56,6 +59,8 @@ ____________________________________________________
     - startActivityForResult를 실행시킨 Activity에서 onActivityResult 를 재정의해야 한다.
 
     - 실행시킨 intent 에 대한 요청결과코드(`resultCode`)와 `data`를 받아 다양한 결과 처리를 할 수 있다.
+
+    - 호출된 Activity 에서 `data`를 넘겨주기 위해서는 `onResult()` 메소드를 사용해야 한다.
 
     ```java
     /**
@@ -95,40 +100,42 @@ ____________________________________________________
         }
     }
     ```
+    
+- 참조 : [Activity Result](https://developer.android.com/training/basics/intents/result.html?hl=ko#ReceiveResult)
 
 ##### Style.xml
 
 - Style.xml 이란?
 
-  > Style.xml 이란 View 또는 창의 모양과 형식을 지정하는 속성 모음이다. <br>
-  > 주로 Activity 의 테마 또는 View 들의 모양을 정의할 떄 사용된다.
+    > Style.xml 이란 View 또는 창의 모양과 형식을 지정하는 속성 모음이다. <br>
+    > 주로 Activity 의 테마 또는 View 들의 모양을 정의할 떄 사용된다.
 
-  - style 은 상속을 받을 수 있으며 각종 속성에 대한 정의를 내려 값을 설정한다.
-  - `<style name="스타일 이름" parent="상속받을 상위 스타일"></style>`: 스타일 명과 상위 스타일을 설정할 수 있다.
-  - `<item name="style을 고유하게 식별하는 name 사용">설정값</item>` : 요소들을 정의할 수 있다.
+    - style 은 상속을 받을 수 있으며 각종 속성에 대한 정의를 내려 값을 설정한다.
+    - `<style name="스타일 이름" parent="상속받을 상위 스타일"></style>`: 스타일 명과 상위 스타일을 설정할 수 있다.
+    - `<item name="style을 고유하게 식별하는 name 사용">설정값</item>` : 요소들을 정의할 수 있다.
 
-  - 기본 작성 방법
+- 기본 작성 방법
 
-  ```xml
-  <resources>
-      <!-- Base application theme. -->
-      <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-          <!-- Customize your theme here. -->
-          <item name="colorPrimary">@color/colorPrimary</item>
-          <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-          <item name="colorAccent">@color/colorAccent</item>
-          <item name="android:windowTranslucentNavigation">false</item>
-          <item name="android:windowTranslucentStatus">true</item>
-          <item name="android:windowContentOverlay">@null</item>
-      </style>
-  </resources>
-  ```
+    ```xml
+    <resources>
+        <!-- Base application theme. -->
+        <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+            <!-- Customize your theme here. -->
+            <item name="colorPrimary">@color/colorPrimary</item>
+            <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+            <item name="colorAccent">@color/colorAccent</item>
+            <item name="android:windowTranslucentNavigation">false</item>
+            <item name="android:windowTranslucentStatus">true</item>
+            <item name="android:windowContentOverlay">@null</item>
+        </style>
+    </resources>
+    ```
 
-  - 상태표시줄에 대한 속성
+- 상태표시줄에 대한 속성
 
-  ![상태표시줄](https://github.com/Hooooong/DAY13_Activity_etc/blob/master/image/%EC%83%81%ED%83%9C%ED%91%9C%EC%8B%9C%EC%A4%84.png)
+    ![상태표시줄](https://github.com/Hooooong/DAY13_Activity_etc/blob/master/image/%EC%83%81%ED%83%9C%ED%91%9C%EC%8B%9C%EC%A4%84.png)
 
-  - material Theme 의 상태표시줄 명이다.
-  - item name 에 이름을 설정하여 Theme 의 속성을 변경한다.
+    - material Theme 의 상태표시줄 명이다.
+    - item name 에 이름을 설정하여 Theme 의 속성을 변경한다.
 
-  - 참조 : [스타일 및 테마](https://developer.android.com/guide/topics/ui/themes.html), [머티리얼 테마 사용](https://developer.android.com/training/material/theme.html)
+- 참조 : [스타일 및 테마](https://developer.android.com/guide/topics/ui/themes.html), [머티리얼 테마 사용](https://developer.android.com/training/material/theme.html)
