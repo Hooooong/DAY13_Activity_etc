@@ -5,7 +5,7 @@ Android Programing
 #### 공부정리
 ____________________________________________________
 
-##### Activity LifeCycle
+##### __Activity LifeCycle__
 
 ![Activity LifeCycle](https://github.com/Hooooong/DAY13_Activity_etc/blob/master/image/Activity%20LifeCycle.jpg)
 
@@ -37,7 +37,7 @@ ____________________________________________________
 
 - 참조 : [Activity LifeCycle](https://developer.android.com/guide/components/activities/activity-lifecycle.html)
 
-##### Activity Result
+##### __Activity Result__
 
 - startActivityForResult ,onActivityResult ,setResult
 
@@ -103,7 +103,7 @@ ____________________________________________________
 
 - 참조 : [Activity Result](https://developer.android.com/training/basics/intents/result.html?hl=ko#ReceiveResult)
 
-##### Style.xml
+##### __Style.xml__
 
 - Style.xml 이란?
 
