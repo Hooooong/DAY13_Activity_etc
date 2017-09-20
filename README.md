@@ -114,6 +114,9 @@ ____________________________________________________
     - `<style name="스타일 이름" parent="상속받을 상위 스타일"></style>`: 스타일 명과 상위 스타일을 설정할 수 있다.
     - `<item name="style을 고유하게 식별하는 name 사용">설정값</item>` : 요소들을 정의할 수 있다.
 
+    - `<item name="android:windowNoTitle">true</item>` 과 `<item name="windowActionBar">false</item>` 를 사용하면 ActionBar 를 없앨 수 있다.
+
+
 - 기본 작성 방법
 
     ```xml
