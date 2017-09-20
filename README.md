@@ -9,7 +9,7 @@ ____________________________________________________
 
 ![Activity LifeCycle](https://github.com/Hooooong/DAY13_Activity_etc/blob/master/image/Activity%20LifeCycle.jpg)
 
-- Activity 의 LifeCycle
+- Activity 의 LifeCycle 
 
 
  메소드 | 설명
