@@ -54,11 +54,11 @@ ____________________________________________________
     startActivityForResult(intent, 요청식별코드);
     ```
 
-    - 요청식별코드(`requestCode`)를 통해 실행시킨 intent의 결과를 식별할 수 있다.
+    - 요청식별코드`requestCode`를 통해 실행시킨 intent의 결과를 식별할 수 있다.
 
     - startActivityForResult를 실행시킨 Activity에서 onActivityResult 를 재정의해야 한다.
 
-    - 실행시킨 intent 에 대한 요청결과코드(`resultCode`)와 `data`를 받아 다양한 결과 처리를 할 수 있다.
+    - 실행시킨 intent 에 대한 요청결과코드`resultCode`와 `data`를 받아 다양한 결과 처리를 할 수 있다.
 
     - 호출된 Activity 에서 `data`를 넘겨주기 위해서는 `setResult(resultCode)` 메소드를 사용해야 한다.
 
