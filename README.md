@@ -60,7 +60,9 @@ ____________________________________________________
 
     - 호출된 Activity 에 대한 요청결과코드인 `resultCode`와 `data`를 받아 다양한 결과 처리를 할 수 있다.
 
-    - 호출된 Activity 에서 `data`를 넘겨주기 위해서는 `setResult(resultCode)` 메소드를 사용해야 한다.
+    - 호출된 Activity 에서 `resultCode`를 넘겨주기 위해서는 `setResult(resultCode)` 메소드를 사용해야 한다.
+
+    - 호출된 Activity 에서 `data`를 넘겨주기 위해서는 `intent객체.putExtra("이름", data)` 메소드를 사용해야 한다.
 
     ```java
     /**
