@@ -62,7 +62,7 @@ ____________________________________________________
 
     - 호출된 Activity 에서 `resultCode`를 넘겨주기 위해서는 `setResult(resultCode)` 메소드를 사용해야 한다.
 
-    - 호출된 Activity 에서 `data`를 넘겨주기 위해서는 `intent객체.putExtra("이름", data)` 메소드를 사용해야 한다.
+    - 호출된 Activity 에서 `data`를 넘겨주기 위해서는 `intent객체.putExtra("이름", data)` 메소드를 사용해야 한다. 작성 후 `setResult(resultCode, intent객체)` 로 값을 넘겨줘야 한다.
 
     ```java
     /**
