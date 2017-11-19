@@ -34,7 +34,6 @@ ____________________________________________________
     - B Activity 가 A Activity 를 완전히 가리면 A Activity 는 onPause()->onStop() 이 된다.
     - B Activity 가 종료되면 A Activity 는 onStop() -> onRestart() -> onStart() -> onResume() 이 되고 다시 RUNNING 상태로 돌아간다.
 
-
 - 참조 : [Activity LifeCycle](https://developer.android.com/guide/components/activities/activity-lifecycle.html)
 
 ##### __Activity Result__
@@ -54,15 +53,23 @@ ____________________________________________________
     startActivityForResult(intent, 요청식별코드);
     ```
 
-    - 요청식별코드인 `requestCode`를 통해 호출된 Activity의 결과를 식별할 수 있다.
-
-    - startActivityForResult를 실행시킨 Activity에서 onActivityResult 를 재정의해야 한다.
-
-    - 호출된 Activity 에 대한 요청결과코드인 `resultCode`와 `data`를 받아 다양한 결과 처리를 할 수 있다.
-
     - 호출된 Activity 에서 `resultCode`를 넘겨주기 위해서는 `setResult(resultCode)` 메소드를 사용해야 한다.
 
     - 호출된 Activity 에서 `data`를 넘겨주기 위해서는 `intent객체.putExtra("이름", data)` 메소드를 사용해야 한다. 작성 후 `setResult(resultCode, intent객체)` 로 값을 넘겨줘야 한다.
+
+    - 호출된 Activity 에 대한 요청결과코드인 `resultCode`와 `data`를 받아 다양한 결과 처리를 할 수 있다.
+
+    ```java
+    // 호출된 Activity 에서 onActivityResult() 에 값을 넘겨주는 방법
+    Intent intent = new Intent();
+    intent.putExtra("data", data);
+    setResult(RESULT_OK, intent);
+    finish();
+    ```
+
+    - 요청식별코드인 `requestCode`를 통해 호출된 Activity의 결과를 식별할 수 있다.
+
+    - startActivityForResult를 실행시킨 Activity에서 onActivityResult 를 재정의해야 한다.
 
     ```java
     /**
@@ -74,6 +81,7 @@ ____________________________________________________
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // requestCode : 요청 식별코드
         // requestCode 를 통해 실행시킨 Activity의 결과를 알 수 있다.
         switch(requestCode){
           case 요청식별코드1:
